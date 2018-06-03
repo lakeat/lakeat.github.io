@@ -1,0 +1,35 @@
+#!/bin/sh
+
+#-Put the following line in your .bashrc file for alias
+# doc () {
+#     cd $HOME/repository && ./gitcheck
+# }
+
+
+LOCAL=$(git rev-parse @{0})
+REMOTE=$(git rev-parse @{u})
+BASE=$(git merge-base @ @{u})
+
+git fetch origin
+
+# See if there are any incoming changes
+str=$(git log HEAD..origin/master --oneline)
+
+if [ ! -z "$str" ]; then
+    echo $str
+    echo "Need to pull!"
+else
+    if [ -n "$(git status --porcelain)" ]; then 
+        echo "There are changes, needs to commit!"; 
+    else 
+        if [ $LOCAL = $REMOTE ]; then
+            echo "No changes, Up-to-date!"
+        elif [ $LOCAL = $BASE ]; then
+            echo "Need to pull"
+        elif [ $REMOTE = $BASE ]; then
+            echo "Need to push"
+        else
+            echo "Diverged"
+        fi
+    fi
+fi

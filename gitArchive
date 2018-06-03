@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# http://stackoverflow.com/questions/160608/do-a-git-export-like-svn-export
+
+PCNAME=$(uname -n)
+TIME=$(date +%Y_%b_%d_%H_%M)
+FILENAME="Keyfiles_$TIME.zip"
+if [ ! -z "$1" ]; then
+   FILENAME=$1.zip
+fi
+
+git archive --format zip --output ../$FILENAME master 

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PCNAME=$(uname -n)
+MSG="Backup from $PCNAME"
+if [ ! -z "$1" ]; then
+   MSG=$1
+fi
+
+git add -A
+git commit -am "$MSG"
+git push
