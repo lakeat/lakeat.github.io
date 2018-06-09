@@ -1,0 +1,39 @@
+#!/bin/sh
+
+#-Remember to put these in the .gitignore list
+#-Once they are added to the .gitignore file, no need to worry it anymore
+# .DS_Store, *.aux, *.bak, *.dvi, *.fls, *.log, *.nav, *.out, *.snm, *.spl, *.synctex.gz, *.toc *.synctex.gz(busy) *.fdb_latexmk
+
+# # for EXT in aux bak dvi fls log nav out snm spl synctex.gz toc; do
+# for EXT in synctex.gz* fdb_latexmk; do
+#     find . -name *.$EXT -print0 | xargs -0 git rm --ignore-unmatch
+# done
+
+# # Remove annoying "._.DS_Store" and ".DS_Store"
+# for MACSYSFILE in ._.DS_Store .DS_Store; do
+#     find . -name MACSYSFILE -print0 | xargs -0 git rm --ignore-unmatch
+# done
+
+# # for EXT in aux bak dvi fls log nav out snm spl synctex.gz toc; do
+# for EXT in synctex.gz* fdb_latexmk; do
+#     find . -name *.$EXT -print -type f -delete
+# done
+
+# # Remove annoying "._.DS_Store" and ".DS_Store"
+# find . -name '*.DS_Store' -print -type f -delete
+
+# git add -A
+# git commit -m 'Certain types of files banished!'
+# git push
+
+
+for imageFile in $(find . -type f -exec file {} \; | awk -F: '{if ($2 ~/image/) print $1}'); do
+    filename=$(basename -- "$imageFile")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+    if [[ $(find ${filename}.${extension} -type f -size +512000c 2>/dev/null) ]]; then
+        convert -strip -interlace Plane -gaussian-blur 0.05 -quality 85% ${filename}.${extension} c_${filename}.jpg
+    else
+        convert ${filename}.${extension} c_${filename}.jpg
+    fi
+done
