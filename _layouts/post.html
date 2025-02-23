@@ -4,23 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  {{ content_for_header }}
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Link to Custom Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+  <!-- MathJax -->
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- AOS for animations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 </head>
 <body>
   <header>
     <h1><a href="{{ site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
   </header>
-  
+
   <div class="content">
-    <main class="main-content">
-      <article>
+    <main class="post-container">
+      <article data-aos="fade-up">
         <header>
           <h2>{{ page.title }}</h2>
-          <p>{{ page.date | date: "%B %d, %Y" }}</p>
+          <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
         </header>
-        
+
         <div class="post-content">
           {{ content }}
         </div>
@@ -31,7 +40,9 @@
   <footer>
     <p>Powered by Jekyll & Minima</p>
   </footer>
-  
-  {{ content_for_footer }}
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

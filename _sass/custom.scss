@@ -1,21 +1,63 @@
-/* In _sass/custom.scss or your custom CSS file */
-.main-content {
-  width: 100%;
-  max-width: 600px; /* You can adjust this to match your parent site's width */
-  margin: 0 auto;
-  padding: 20px;
-}
+/* Custom styles for a single-column, beautiful blog */
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Noto Sans SC', Arial, sans-serif;
+  line-height: 1.8;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-  text-align: center;
+.post-container {
+  width: 100%;
+  max-width: 800px; /* Adjust to fit your preferred width */
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px); /* Glass effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+header .date {
+  font-size: 1.1em;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  font-size: 1.2em;
+  color: #444;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+a:hover {
+  color: #005b8c;
 }
 
 footer {
   text-align: center;
-  padding: 10px;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Glass Effect Style for Image or Post Header */
+.post-container img {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
 }

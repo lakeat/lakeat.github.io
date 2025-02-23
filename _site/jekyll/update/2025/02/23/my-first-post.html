@@ -4,23 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>测试一个中文! - 魏志刚的Github主页</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Link to Custom Styles -->
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+  <!-- MathJax -->
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- AOS for animations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 </head>
 <body>
   <header>
     <h1><a href="https://lakeat.github.io">魏志刚的Github主页</a></h1>
   </header>
-  
+
   <div class="content">
-    <main class="main-content">
-      <article>
+    <main class="post-container">
+      <article data-aos="fade-up">
         <header>
           <h2>测试一个中文!</h2>
-          <p>February 23, 2025</p>
+          <p class="date">February 23, 2025</p>
         </header>
-        
+
         <div class="post-content">
           <h1 id="究竟中文好不好使">究竟中文好不好使</h1>
 <p>公式能不能显示出来$a$.</p>
@@ -53,7 +62,9 @@ You’ll find this post in your <code class="language-plaintext highlighter-roug
   <footer>
     <p>Powered by Jekyll & Minima</p>
   </footer>
-  
-  
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
