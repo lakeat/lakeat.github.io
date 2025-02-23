@@ -1,0 +1,84 @@
+/* Custom styles for a single-column, beautiful blog */
+/* Center the site title */
+header h1 {
+    text-align: center;
+    font-size: 2.5em;  /* Adjust the font size as needed */
+    margin-top: 20px;  /* Adjust the top margin to add space from the top */
+  }
+  
+  /* Optional: Center the site title on larger screens */
+  @media (min-width: 768px) {
+    header h1 {
+      font-size: 3em;  /* Adjust for larger screens */
+    }
+  }
+  
+  /* Optional: Center the site description (if any) */
+  header p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+  }
+  
+body {
+    font-family: 'Noto Sans SC', Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .post-container {
+    width: 100%;
+    max-width: 800px; /* Adjust to fit your preferred width */
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px); /* Glass effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  header .date {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .post-content {
+    font-size: 1.2em;
+    color: #444;
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007acc;
+  }
+  
+  a:hover {
+    color: #005b8c;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  /* Glass Effect Style for Image or Post Header */
+  .post-container img {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
