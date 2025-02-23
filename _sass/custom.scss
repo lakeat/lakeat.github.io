@@ -1,0 +1,21 @@
+/* In _sass/custom.scss or your custom CSS file */
+.main-content {
+  width: 100%;
+  max-width: 800px; /* You can adjust this to match your parent site's width */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+}
