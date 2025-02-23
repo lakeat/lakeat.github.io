@@ -31,7 +31,7 @@ url: https://lakeat.github.io  # the base hostname and protocol for your site, e
 baseurl: /lakeat.github.io/      # place folder name if the site is served in a subfolder
 
 # Build settings
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 
