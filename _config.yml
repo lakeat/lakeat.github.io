@@ -31,8 +31,8 @@ baseurl: ""
 url: "https://lakeat.github.io"  # the base hostname and protocol for your site, e.g. http://example.com
 
 # Build settings
-theme: minimal-mistakes-jekyll
-# theme: minima
+# theme: minimal-mistakes-jekyll
+theme: minima
 plugins:
   - jekyll-feed
 
